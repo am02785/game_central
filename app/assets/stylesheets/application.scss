@@ -15,3 +15,70 @@
  */
 /* @import "bootstrap-sprockets"; */
 /* @import "bootstrap"; */
+
+$font: Verdana, Sans-serif;
+$light_blue: #00A2E8;
+$dark_blue: #1806BE;
+
+/* sets the style of the body */
+body {
+  font-family: $font; /* sets the font */
+  background-color: white; /* sets the background colour */
+  margin: 10px; /* sets the margin to 10px */
+  padding: 10px; /* sets the padding to 10px */
+}
+
+/* transforms the text in h1 elements to uppercase */
+h1 {
+  text-transform: uppercase;
+}
+
+/* sets the style of the logo */
+#logo {
+  font-family: Arial; /* set the font family to Arial */
+  font-weight: bold; /* set the font weight to bold */
+  color: $light_blue; /* set the colour */
+  text-decoration: none; /* remove the underline in the hyperlink */
+  width: 200px; /* set the width to 200px */
+  height: 50px; /* set the height to 50px */
+  padding-right: 25px; /* set the padding-right to 25px */
+}
+
+/* sets the padding-right of the logo to 75px */
+#search_bar {
+  padding-right: 75px;
+}
+
+/* sets the style of the search button */
+#search_button {
+}
+
+
+/* sets the style of the navigation bar */
+#nav_bar {
+  list-style-type: none; /* Removes the bullets */
+  margin: 0; /* Removes the margins */
+  padding: 0; /* Removes the padding */
+  overflow: hidden; /* Sets the overflow to hidden */
+  background-color: $light_blue; /* Sets the background colour */
+}
+
+/* sets the float of the list items in the navigation bar to left */
+#nav_bar li {
+  float: left;
+}
+
+/* sets the style of the links in the list items which are in the navigation bar */
+#nav_bar li a {
+  display: block; /* sets the display to block */
+  color: white; /* sets the colour */
+  text-align: center; /* sets the text align to center */
+  padding: 14px 16px; /* sets the padding */
+  text-decoration: none; /* removes the text decoration */
+}
+
+
+/* changes the link colour on hover */
+#nav_bar li a:hover {
+  background-color: $dark_blue;
+}

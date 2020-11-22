@@ -32,3 +32,9 @@
 en:
   app_title: Game Central
   app_description: An online store where you can purchase video games.
+  games: Games
+  contact: Contact Us
+
+  home:
+    home:
+      welcome: Welcome to the game central store.
