@@ -19,8 +19,11 @@
 
   %body
 
-    / The header of every page.
-    = render 'shared/header'
-    = yield
-    / The footer of every page.
-    = render 'shared/footer'
+    / A containing element to make the site responsive to screen size.
+    / https://www.w3schools.com/bootstrap/bootstrap_get_started.asp used to make the site responsive to screen size.
+    %div{'class' => 'container-fluid'}
+      / The header of every page.
+      = render 'shared/header'
+      = yield
+      / The footer of every page.
+      = render 'shared/footer'
