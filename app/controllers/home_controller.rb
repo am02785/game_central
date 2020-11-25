@@ -17,7 +17,7 @@ class HomeController < ApplicationController
     if email.blank? # Checks whether an email address has been submitted.
       flash[:alert] = I18n.t('home.request_contact.no_email') # Shows an alert if the email field is empty.
     else
-      # Send an email
+      ContactMailer.contact_email(email, name, telephone, message).deliver_now # Sends an email.
       flash[:notice] = I18n.t('home.request_contact.email_sent') # Shows an notice if email has been sent successfully.
     end
 

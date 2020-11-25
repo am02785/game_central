@@ -1,0 +1,17 @@
+/ Paragraphs which the email contains.
+%p= "Dear #{t('app_title')},"
+%p= "Could you get in touch with me please?"
+
+%dl
+  %dt Name:
+  %dd= @name # The name of the user.
+  %dt Email:
+  %dd= @email # The email address of the user.
+  %dt Telephone:
+  %dd= @telephone # The telephone number of the user.
+
+%p= @message # The paragraph which is the message that the user sent.
+
+/ The thank you message which the email contains.
+%p Thanks,
+%p= @name # The name of the user.
