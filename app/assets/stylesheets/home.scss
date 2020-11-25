@@ -1,3 +1,9 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* sets the style of the form labels and the form inputs */
+form label, form input {
+  display: block; /* sets the display to block */
+  margin: 10px; /* sets the margin to 10px */
+}

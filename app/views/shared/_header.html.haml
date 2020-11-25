@@ -1,5 +1,5 @@
-/ The footer of every page.
-%footer
+/ The header of every page.
+%header
   / The logo of the web application which is also a link to the home page.
   %a{'href' => '/', 'id' => 'logo'}= t('app_title')
   / The search bar which allows users to search for games with a specific name.
@@ -17,3 +17,7 @@
     %li
       / The link to the contact page.
       %a{'href' => '/contact'}= t('contact')
+
+  / The flash messages which are displayed if the user has filled the contact form.
+  - flash.each do |key, value|
+    = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank? # Outputs the flash message.

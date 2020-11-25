@@ -28,9 +28,10 @@ body {
   padding: 10px; /* sets the padding to 10px */
 }
 
-/* transforms the text in h1 elements to uppercase */
+/* sets the style of the h1 elements */
 h1 {
-  text-transform: uppercase;
+  text-transform: uppercase; /* transforms the text in h1 elements to uppercase */
+  color: $light_blue; /* sets the colour of the text in h1 elements */
 }
 
 /* sets the style of the logo */

@@ -1,0 +1,20 @@
+/ The heading which is the title of the contact page.
+%h1= t('.title')
+/ Instruction to complete the form.
+%p= t('.contact_us')
+
+/ The contact form which users submit.
+= form_tag request_contact_path, method: 'post' do # The path is request_contact_path and the method is post.
+  = label_tag :name, t('.name') # Label tag for name field.
+  = text_field_tag :name, '', title: t('.enter_name'), size: 50 # The field which users input their name.
+
+  = label_tag :email, t('.email') # Label tag for email field.
+  = email_field_tag :email, '', title: t('.enter_email') # The field which users input their email.
+
+  = label_tag :telephone, t('.telephone') # Label tag for telephone field.
+  = telephone_field_tag :telephone, '', title: t('.enter_telephone') # The field which users input their telephone.
+
+  = label_tag :message, t('.message') # Label tag for message field.
+  = text_field_tag :message, '', title: t('.enter_message'), size: 100 # The field which users input the message.
+
+  = submit_tag t('.submit') # The submit button for the contact form.
