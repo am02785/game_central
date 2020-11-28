@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @game.title
+%p
+  %b Description:
+  = @game.description
+%p
+  %b Image url:
+  = @game.image_url
+%p
+  %b Price:
+  = @game.price
+%p
+  %b Release date:
+  = @game.release_date
+
+= link_to 'Edit', edit_game_path(@game)
+\|
+= link_to 'Back', games_path

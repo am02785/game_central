@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :games
   # Home page is the root.
   root 'home#home'
   # Contact page.
