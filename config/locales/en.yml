@@ -43,15 +43,21 @@ en:
       title: Contact Us
       contact_us: Complete the following form to get in touch with us.
 
+      contact_form_id: "contact_form"
       name: "Name:"
+      name_field_name: "name"
       enter_name: Enter your name
       email: "Email:"
+      email_field_name: "email"
       enter_email: Enter your email address
       telephone: "Telephone:"
+      telephone_field_name: "telephone"
       enter_telephone: Enter your telephone number
       message: "Message:"
+      message_field_name: "message"
       enter_message: What do you want to say?
       submit: Contact Us
+      submit_id: "submit_contact_form"
 
     request_contact:
       no_email: You must supply an email address
