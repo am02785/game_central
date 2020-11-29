@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_28_204231) do
+ActiveRecord::Schema.define(version: 2020_11_29_160457) do
 
   create_table "games", force: :cascade do |t|
     t.string "title", null: false
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_11_28_204231) do
     t.date "release_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "game_console", null: false
     t.index ["title"], name: "index_games_on_title", unique: true
   end
 
