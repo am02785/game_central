@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :games
+  # Resource paths
+  resources :games, only: [:index, :show]
   # Home page is the root.
   root 'home#home'
   # Contact page.
