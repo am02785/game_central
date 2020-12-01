@@ -1,19 +1,34 @@
 %p#notice= notice
 
-%p
-  %b Title:
-  = @game.title
-%p
-  %b Description:
-  = @game.description
-%p
-  %b Image url:
-  = @game.image_url
-%p
-  %b Price:
-  = @game.price
-%p
-  %b Release date:
-  = @game.release_date
+%image{'src' => @game.image_url, 'alt' => @game.title, 'id' => 'game_image', 'width' => 300, 'height' => 400}
 
-= link_to 'Back', games_path
+%div{'id' => 'game_info'}
+  %h1= @game.title
+  %h4= t('.price') + @game.price.to_s
+  %h4= t('.game_console') + @game.game_console
+  %h2= t('.description')
+  %p= @game.description
+  %h4= t('.release_date') + @game.release_date.wday.to_s + '/' + @game.release_date.mon.to_s + '/' + @game.release_date.year.to_s
+
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br

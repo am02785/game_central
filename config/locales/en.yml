@@ -32,7 +32,7 @@
 en:
   app_title: Game Central
   app_description: An online store where you can purchase video games.
-  games: Games
+  games_link: Games
   contact: Contact Us
 
   home:
@@ -62,3 +62,13 @@ en:
     request_contact:
       no_email: You must supply an email address
       email_sent: Thank you. We will be in touch shortly.
+
+  games:
+    index:
+      index_route: "/games/"
+
+    show:
+      price: "Price: £"
+      game_console: "Game Console: "
+      description: "Description"
+      release_date: "Release Date: "

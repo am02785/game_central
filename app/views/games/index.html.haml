@@ -1,26 +1,8 @@
 %h1 Listing games
-
-%table
-  %thead
-    %tr
-      %th Title
-      %th Description
-      %th Image url
-      %th Price
-      %th Release date
-      %th
-      %th
-      %th
-
-  %tbody
-    - @games.each do |game|
-      %tr
-        %td= game.title
-        %td= game.description
-        %td= game.image_url
-        %td= game.price
-        %td= game.release_date
-        %td= link_to 'Show', game
+- @games.each do |game|
+  %a{'href' => t('.index_route') + game.id.to_s, 'class' => 'show_game'}
+    %image{'src' => game.image_url, 'alt' => game.title, 'width' => 150, 'height' => 200}
+    %p= game.title
 
 %br
 
