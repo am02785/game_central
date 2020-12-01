@@ -8,6 +8,17 @@
   %input{'type' => 'submit', 'value' => 'search'}
   / The navigation bar which is a list of links.
   / https://www.w3schools.com/css/css_navbar.asp used to create a navigation bar.
+
+  - if customer_signed_in?
+    = "#{current_customer.name} |"
+    = link_to t('profile'), edit_customer_registration_path
+    = '|'
+    = link_to t('logout'), destroy_customer_session_path, method: 'delete'
+  - else
+    = link_to t('login'), new_customer_session_path
+    = '|'
+    = link_to t('sign_up'), new_customer_registration_path
+
   %ul{'id' => 'nav_bar'}
     / The list item which contains a link to the games page.
     %li

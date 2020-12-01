@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :customers
   # Resource paths
   resources :games, only: [:index, :show]
   # Home page is the root.

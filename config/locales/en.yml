@@ -34,6 +34,11 @@ en:
   app_description: An online store where you can purchase video games.
   games_link: Games
   contact: Contact Us
+  profile: Profile
+  logout: Logout
+  login: Login
+  sign_up: Sign Up
+
 
   home:
     home:
