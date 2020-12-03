@@ -1,0 +1,10 @@
+%p#notice= notice
+
+%h1= t('.shopping_basket')
+
+- @basket.line_items.each do |item|
+  %image{'src' => item.game.image_url, 'alt' => item.game.title, 'width' => 150, 'height' => 200}
+  %p= item.game.title
+
+%h4= t('.total_cost') + @basket.total_cost.to_s
+

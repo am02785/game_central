@@ -9,6 +9,9 @@
   %h2= t('.description')
   %p= @game.description
   %h4= t('.release_date') + @game.release_date.wday.to_s + '/' + @game.release_date.mon.to_s + '/' + @game.release_date.year.to_s
+  %div{'id' => 'add_to_basket_button'}
+    %p
+      = link_to t('.add_to_basket'), game_line_item_path(game_id: @game.id), method: 'post', href: t('.game_path') + @game.id.to_s + t('.line_item_path') + @game.id.to_s, id: 'add_to_basket_link'
 
 %br
 %br

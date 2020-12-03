@@ -77,3 +77,11 @@ en:
       game_console: "Game Console: "
       description: "Description"
       release_date: "Release Date: "
+      add_to_basket: "Add To Basket"
+      game_path: "/games/"
+      line_item_path: "/line_items?game_id="
+
+  baskets:
+    show:
+      shopping_basket: Shopping Basket
+      total_cost: "Total Cost: "

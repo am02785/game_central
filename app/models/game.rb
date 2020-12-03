@@ -18,4 +18,7 @@ class Game < ApplicationRecord
   validates :game_console, presence: true
   # The game_console of the game must either be Nintendo Switch, PS5, or Xbox Series X.
   validates :game_console, inclusion: { in: ['Nintendo Switch', 'PS5', 'Xbox Series X'] }
+
+  # A game can be in 0 or more line items.
+  has_many :line_items
 end

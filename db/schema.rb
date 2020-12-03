@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_193528) do
+ActiveRecord::Schema.define(version: 2020_12_02_204658) do
+
+  create_table "baskets", force: :cascade do |t|
+    t.decimal "total_cost", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -20,8 +26,6 @@ ActiveRecord::Schema.define(version: 2020_12_01_193528) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name", null: false
-    t.string "credit_card_number", null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
@@ -36,6 +40,15 @@ ActiveRecord::Schema.define(version: 2020_12_01_193528) do
     t.datetime "updated_at", null: false
     t.string "game_console", null: false
     t.index ["title"], name: "index_games_on_title", unique: true
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer "game_id", null: false
+    t.integer "basket_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["basket_id"], name: "index_line_items_on_basket_id"
+    t.index ["game_id"], name: "index_line_items_on_game_id"
   end
 
 end

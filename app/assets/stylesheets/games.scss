@@ -26,3 +26,16 @@ $light_blue: #00A2E8;
 #game_info {
   float: left;
 }
+
+#add_to_basket_button {
+  float: left;
+  background-color: $light_blue;
+}
+
+#add_to_basket_link {
+  text-decoration: none;
+  color: white;
+  &:hover {
+    background-color: transparent;
+  }
+}

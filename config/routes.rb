@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  resources :baskets, only: [:show, :create, :destroy]
   devise_for :customers
   # Resource paths
-  resources :games, only: [:index, :show]
+  resources :games, only: [:index, :show] do
+    resources :line_items, only: [:create, :destroy]
+  end
   # Home page is the root.
   root 'home#home'
   # Contact page.
