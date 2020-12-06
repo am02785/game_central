@@ -1,7 +1,7 @@
 class LineItemsController < ApplicationController
   before_action :set_line_item, only: :destroy
-  # call set_cart on LineItem create
-  before_action :set_basket, only: :create
+  # call set_cart on LineItem create and LineItem destroy
+  before_action :set_basket, only: [:create, :destroy]
 
   # POST /line_items
   # POST /line_items.json
@@ -30,9 +30,14 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to line_items_url, notice: 'Line item was successfully destroyed.' }
+      format.html { redirect_to game_line_items_url, notice: 'Line item was successfully destroyed.' }
+      # used to handle a javascript response.
+      format.js
       format.json { head :no_content }
     end
+    # the total cost of the basket should be decreased by the price of the game
+    @basket.total_cost -= @line_item.game.price
+    @basket.save
   end
 
   private

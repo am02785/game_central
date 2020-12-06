@@ -1,0 +1,5 @@
+// finds the div element with the correct id and hides it.
+$('#line_item_<%= @line_item.id %>').hide();
+// finds the h4 element with id "total_cost_of_basket"
+// and updates it to show the correct total cost of the basket
+$('#total_cost_of_basket').text('<%=t('.total_cost') + @line_item.basket.total_cost.to_s %>');

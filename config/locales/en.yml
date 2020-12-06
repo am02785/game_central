@@ -85,3 +85,10 @@ en:
     show:
       shopping_basket: Shopping Basket
       total_cost: "Total Cost: "
+      remove_from_basket: "Remove From Basket"
+      game_path: "/games/"
+      line_item_path: "/line_items/"
+
+  line_items:
+    destroy:
+      total_cost: "Total Cost: "

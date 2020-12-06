@@ -9,9 +9,9 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//= require bootstrap-sprockets
 //= require jquery3
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require jquery.validate.min.js
 //= require jquery_functions.js
 //= require activestorage
