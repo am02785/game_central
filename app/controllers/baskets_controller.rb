@@ -1,5 +1,7 @@
 class BasketsController < ApplicationController
   before_action :set_basket, only: [:show, :destroy]
+  # restricts access to the baskets
+  before_action :authenticate_customer!
 
   # GET /baskets/1
   # GET /baskets/1.json

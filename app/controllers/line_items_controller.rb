@@ -2,6 +2,8 @@ class LineItemsController < ApplicationController
   before_action :set_line_item, only: :destroy
   # call set_cart on LineItem create and LineItem destroy
   before_action :set_basket, only: [:create, :destroy]
+  # restricts access to the line items
+  before_action :authenticate_customer!
 
   # POST /line_items
   # POST /line_items.json
