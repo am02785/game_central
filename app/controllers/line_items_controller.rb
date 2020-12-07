@@ -48,12 +48,14 @@ class LineItemsController < ApplicationController
       @line_item = LineItem.find(params[:id])
     end
 
-  # finds the current basket. If there isn't one, one is created.
+  # finds the basket which the current customer owns.
+  # if the customer does not own one, one is created for the customer.
   def set_basket
-    @basket = Basket.find(session[:basket_id])
-  rescue ActiveRecord::RecordNotFound
-    @basket = Basket.create( {total_cost: 0} )
-    session[:basket_id] = @basket.id
+    if current_customer.basket
+      @basket = current_customer.basket
+    else
+      @basket = Basket.create( {total_cost: 0, customer_id: current_customer.id} )
+    end
   end
 
     # Only allow a list of trusted parameters through.

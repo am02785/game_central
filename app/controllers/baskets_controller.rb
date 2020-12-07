@@ -11,7 +11,7 @@ class BasketsController < ApplicationController
   # POST /baskets
   # POST /baskets.json
   def create
-    @basket = Basket.new(basket_params)
+    @basket = Basket.new({total_cost: 0, customer_id: current_customer.id})
 
     respond_to do |format|
       if @basket.save
@@ -42,6 +42,6 @@ class BasketsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def basket_params
-      params.require(:basket).permit(:total_cost)
+      params.require(:basket).permit(:total_cost, :customer_id)
     end
 end
