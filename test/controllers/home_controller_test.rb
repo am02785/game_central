@@ -2,6 +2,8 @@ require 'test_helper'
 
 # tests the home controller.
 class HomeControllerTest < ActionDispatch::IntegrationTest
+  # includes devise in the controller tests.
+  include Devise::Test::IntegrationHelpers
 
   # tests the home action.
   test 'should get home' do

@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class LineItemsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @line_item = line_items(:one)
+    @customer = customers(:one)
+    sign_in @customer
   end
 
   test "should create line_item" do

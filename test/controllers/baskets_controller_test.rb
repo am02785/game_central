@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class BasketsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @basket = baskets(:one)
+    @customer = customers(:one)
+    sign_in @customer
   end
 
   test "should create basket" do
