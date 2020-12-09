@@ -11,3 +11,6 @@
     %br
 
 %h4{'id' => 'total_cost_of_basket'}= t('.total_cost') + @basket.total_cost.to_s
+
+- if @basket.line_items.length > 0
+  = link_to t('.proceed_to_checkout'), new_order_path, id: 'proceed_to_checkout_link'

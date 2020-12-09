@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer: one
+  name_on_credit_card: Bob Example
+  CVV: 1111
+  credit_card_number: 1111 1111 1111 1111
+  credit_card_valid_until: 2021-12-08
+  total_cost: 9.99
+
+two:
+  customer: two
+  name_on_credit_card: Bob Example
+  CVV: 1111
+  credit_card_number: 1111 1111 1111 1111
+  credit_card_valid_until: 2021-12-08
+  total_cost: 9.99

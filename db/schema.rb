@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_07_111702) do
+ActiveRecord::Schema.define(version: 2020_12_08_165130) do
 
   create_table "baskets", force: :cascade do |t|
     t.decimal "total_cost", null: false
@@ -46,11 +46,26 @@ ActiveRecord::Schema.define(version: 2020_12_07_111702) do
 
   create_table "line_items", force: :cascade do |t|
     t.integer "game_id", null: false
-    t.integer "basket_id", null: false
+    t.integer "basket_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "order_id"
+    t.date "delivery_date"
     t.index ["basket_id"], name: "index_line_items_on_basket_id"
     t.index ["game_id"], name: "index_line_items_on_game_id"
+    t.index ["order_id"], name: "index_line_items_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.string "name_on_credit_card", null: false
+    t.string "CVV", null: false
+    t.string "credit_card_number", null: false
+    t.date "credit_card_valid_until", null: false
+    t.decimal "total_cost", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_orders_on_customer_id"
   end
 
 end

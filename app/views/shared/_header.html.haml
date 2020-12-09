@@ -19,6 +19,8 @@
       = link_to t('basket'), basket_path(current_customer.basket.id)
     - else
       = link_to t('basket'), baskets_path, method: :post
+    = '|'
+    = link_to t('customer_orders'), orders_path
   - else
     = link_to t('login'), new_customer_session_path
     = '|'

@@ -3,7 +3,7 @@ class LineItem < ApplicationRecord
   # The game which the line item belongs to cannot be null.
   validates :game_id, presence: true
   # The basket which the line item belongs to cannot be null.
-  validates :basket_id, presence: true
+  # validates :basket_id, presence: true
   # Each line item belongs to a game.
   belongs_to :game
   # Each line item belongs to a basket.

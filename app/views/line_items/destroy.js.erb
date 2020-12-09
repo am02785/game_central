@@ -3,3 +3,8 @@ $('#line_item_<%= @line_item.id %>').hide();
 // finds the h4 element with id "total_cost_of_basket"
 // and updates it to show the correct total cost of the basket
 $('#total_cost_of_basket').text('<%=t('.total_cost') + @line_item.basket.total_cost.to_s %>');
+// if the basket which the line item is removed from does not have any line items,
+// the link which allows customers to order games will be hidden
+<%- if @line_item.basket.line_items.length == 0 %>
+  $('#proceed_to_checkout_link').hide();
+<%- end %>

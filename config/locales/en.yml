@@ -39,7 +39,8 @@ en:
   login: Login
   sign_up: Sign Up
   basket: Basket
-
+  customer_orders: Orders
+  buy: "Buy"
 
   home:
     home:
@@ -85,11 +86,35 @@ en:
   baskets:
     show:
       shopping_basket: Shopping Basket
-      total_cost: "Total Cost: "
+      total_cost: "Total Cost: £"
       remove_from_basket: "Remove From Basket"
       game_path: "/games/"
       line_item_path: "/line_items/"
+      proceed_to_checkout: "Proceed To Checkout"
 
   line_items:
     destroy:
-      total_cost: "Total Cost: "
+      total_cost: "Total Cost: £"
+
+  orders:
+    index:
+      your_orders: Your Orders
+      order_number: Order Number
+      total_cost: Total Cost
+
+    new:
+      checkout: Checkout
+
+    show:
+      delivered: Delivered
+      delivery_date: "Delivery Date: "
+      total_cost: "Total Cost: £"
+
+
+  helpers:
+    label:
+      order:
+        name_on_credit_card: Name On Card
+        CVV: CVV
+        credit_card_number: Card Number
+        credit_card_valid_until: Valid Until
