@@ -87,3 +87,35 @@ h1 {
 .customer_link {
   float: right;
 }
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 15px;
+}
+
+th {
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  color: white;
+  background-color: $dark_blue;
+}
+
+tr:nth-child(odd) {
+  color: white;
+  background-color: $light_blue;
+}
+
+th {
+  color: white;
+  background-color: $light_blue;
+}

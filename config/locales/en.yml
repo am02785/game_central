@@ -45,6 +45,13 @@ en:
   home:
     home:
       welcome: Welcome to the game central store.
+      text_colour: "text colour:"
+      change_color: change color
+      font_size: "font size:"
+      small: small
+      medium: medium
+      large: large
+      change_font_size: change font size
 
     contact:
       title: Contact Us
@@ -101,6 +108,9 @@ en:
       your_orders: Your Orders
       order_number: Order Number
       total_cost: Total Cost
+      link_to_order: Link To Order
+      show_order: Show Order
+      £: £
 
     new:
       checkout: Checkout

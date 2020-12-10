@@ -5,7 +5,7 @@
     %tr
       %th= t('.order_number')
       %th= t('.total_cost')
-      %th
+      %th= t('.link_to_order')
 
   %tbody
     - order_number = 0
@@ -13,7 +13,7 @@
       - order_number += 1
       %tr
         %td= order_number
-        %td= order.total_cost
-        %td= link_to 'Show', order
+        %td= t('.£') + order.total_cost.to_s
+        %td= link_to t('.show_order'), order
 
 %br
