@@ -32,7 +32,11 @@
 en:
   app_title: Game Central
   app_description: An online store where you can purchase video games.
-  games_link: Games
+  search: "search"
+  all_games_link: All Games
+  nintendo_switch_games_link: Nintendo Switch Games
+  ps5_games_link: PS5 Games
+  xbox_series_x_games_link: Xbox Series X Games
   contact: Contact Us
   profile: Profile
   logout: Logout
@@ -41,6 +45,7 @@ en:
   basket: Basket
   customer_orders: Orders
   buy: "Buy"
+  games_index_route: "/games/"
 
   home:
     home:
@@ -78,9 +83,6 @@ en:
       email_sent: Thank you. We will be in touch shortly.
 
   games:
-    index:
-      index_route: "/games/"
-
     show:
       price: "Price: £"
       game_console: "Game Console: "

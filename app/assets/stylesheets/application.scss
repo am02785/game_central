@@ -34,24 +34,39 @@ h1 {
   color: $light_blue; /* sets the colour of the text in h1 elements */
 }
 
+#top_nav {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
 /* sets the style of the logo */
 #logo {
+  float: left;
   font-family: Arial; /* set the font family to Arial */
   font-weight: bold; /* set the font weight to bold */
   color: $light_blue; /* set the colour */
   text-decoration: none; /* remove the underline in the hyperlink */
-  width: 200px; /* set the width to 200px */
-  height: 50px; /* set the height to 50px */
-  padding-right: 25px; /* set the padding-right to 25px */
+  /* width: 200px; /* set the width to 200px */
+  /* height: 50px; /* set the height to 50px */
+  padding-right: 10px; /* set the padding-right to 25px */
+}
+
+#search_form {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
 }
 
 /* sets the padding-right of the logo to 75px */
 #search_bar {
+  float: left;
   padding-right: 75px;
 }
 
 /* sets the style of the search button */
 #search_button {
+  margin: 0px;
 }
 
 
@@ -118,4 +133,8 @@ tr:nth-child(odd) {
 th {
   color: white;
   background-color: $light_blue;
+}
+
+#search_button {
+  float: left;
 }

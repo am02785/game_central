@@ -1,39 +1,43 @@
 / The header of every page.
 %header
-  / The logo of the web application which is also a link to the home page.
-  %a{'href' => '/', 'id' => 'logo'}= t('app_title')
-  / The search bar which allows users to search for games with a specific name.
-  %input{'id' => 'search_bar', 'type' => 'text'}
-  / The button which users can click to search for games.
-  %input{'type' => 'submit', 'value' => 'search'}
-  / The navigation bar which is a list of links.
-  / https://www.w3schools.com/css/css_navbar.asp used to create a navigation bar.
+  %div{'id' => 'top_nav'}
+    / The logo of the web application which is also a link to the home page.
+    %a{'href' => '/', 'id' => 'logo'}= t('app_title')
+    / The search bar which allows users to search for games with a specific name.
+    %input{'id' => 'search_bar', 'type' => 'text', 'name' => :input}
+    / The button which users can click to search for games.
+    / %input{'type' => 'submit', 'value' => 'search'}
+    = button_to t('search'), search_path( {:search_input => 'of'} )  , method: :get, id: 'search_button'
+    / The navigation bar which is a list of links.
+    / https://www.w3schools.com/css/css_navbar.asp used to create a navigation bar.
 
-  - if customer_signed_in?
-    = "#{current_customer.email} |"
-    = link_to t('profile'), edit_customer_registration_path
-    = '|'
-    = link_to t('logout'), destroy_customer_session_path, method: 'delete'
-    = '|'
-    - if current_customer.basket
-      = link_to t('basket'), basket_path(current_customer.basket.id)
+    - if customer_signed_in?
+      = "#{current_customer.email} |"
+      = link_to t('profile'), edit_customer_registration_path
+      = '|'
+      = link_to t('logout'), destroy_customer_session_path, method: 'delete'
+      = '|'
+      - if current_customer.basket
+        = link_to t('basket'), basket_path(current_customer.basket.id)
+      - else
+        = link_to t('basket'), baskets_path, method: :post
+      = '|'
+      = link_to t('customer_orders'), orders_path
     - else
-      = link_to t('basket'), baskets_path, method: :post
-    = '|'
-    = link_to t('customer_orders'), orders_path
-  - else
-    = link_to t('login'), new_customer_session_path
-    = '|'
-    = link_to t('sign_up'), new_customer_registration_path
+      = link_to t('login'), new_customer_session_path
+      = '|'
+      = link_to t('sign_up'), new_customer_registration_path
 
   %ul{'id' => 'nav_bar'}
-    / The list item which contains a link to the games page.
     %li
-      / The link to the games page.
-      %a{'href' => '/games'}= t('games_link')
-    / The list item which contains a link to the contact page.
+      %a{'href' => '/games'}= t('all_games_link')
     %li
-      / The link to the contact page.
+      %a{'href' => '/nintendo_switch_games'}= t('nintendo_switch_games_link')
+    %li
+      %a{'href' => '/ps5_games'}= t('ps5_games_link')
+    %li
+      %a{'href' => '/xbox_series_x_games'}= t('xbox_series_x_games_link')
+    %li
       %a{'href' => '/contact'}= t('contact')
 
   / The flash messages which are displayed if the user has filled the contact form.

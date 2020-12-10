@@ -21,4 +21,14 @@ class Game < ApplicationRecord
 
   # A game can be in 0 or more line items.
   has_many :line_items
+
+  # Scope used to search for a game with a name like the user input
+  scope :search_games, ->(input) { where(["Lower(title) LIKE ?", "%#{input}%"]) }
+  # Scope used to retrieve all games for the Nintendo Switch
+  scope :nintendo_switch_games, -> { where game_console: 'Nintendo Switch'}
+  # Scope used to retrieve all games for the PS5
+  scope :ps5_games, -> { where game_console: 'PS5'}
+  # Scope used to retrieve all games for the Xbox Series X
+  scope :xbox_series_x_games, -> { where game_console: 'Xbox Series X'}
+
 end

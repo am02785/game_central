@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :games, only: [:index, :show] do
     resources :line_items, only: [:create, :destroy]
   end
+  get 'search', to: 'games#search', as: 'search'
+  get 'nintendo_switch_games', to: 'games#nintendo_switch_games', as: 'nintendo_switch_games'
+  get 'ps5_games', to: 'games#ps5_games', as: 'ps5_games'
+  get 'xbox_series_x_games', to: 'games#xbox_series_x_games', as: 'xbox_series_x_games'
   # Home page is the root.
   root 'home#home'
   # Contact page.
