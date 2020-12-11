@@ -32,7 +32,28 @@
 en:
   app_title: Game Central
   app_description: An online store where you can purchase video games.
+  container-fluid: "container-fluid"
+  header_file_path: "shared/header"
+  footer_file_path: "shared/footer"
   search: "search"
+  games_file_name: "games"
+  id: "id"
+  top_nav: "top_nav"
+  /: "/"
+  logo: "logo"
+  search_bar: "search_bar"
+  type: "type"
+  text: "text"
+  name: "name"
+  search_button: "search_button"
+  "|": "|"
+  delete: "delete"
+  nav_bar: "nav_bar"
+  games_route: "/games"
+  nintendo_switch_games_route: "/nintendo_switch_games"
+  ps5_games_route: "/ps5_games"
+  xbox_series_x_games_route: "/xbox_series_x_games"
+  contact_route: "/contact"
   all_games_link: All Games
   nintendo_switch_games_link: Nintendo Switch Games
   ps5_games_link: PS5 Games
@@ -44,15 +65,38 @@ en:
   sign_up: Sign Up
   basket: Basket
   customer_orders: Orders
+  copyright: "&copy;"
   buy: "Buy"
+  href: "href"
   games_index_route: "/games/"
+  class: "class"
+  show_game: "show_game"
+  src: "src"
+  alt: "alt"
+  width: "width"
+  height: "height"
+  error: "error"
+  prohibited_this_order_from_being_saved: "prohibited this order from being saved:"
+  dear: "dear"
+  could_you_get_in_touch_with_me_please: "Could you get in touch with me please?"
+  name_title_in_contact_email: "Name:"
+  email: "Email:"
+  telephone: "Telephone:"
+  thanks: Thanks,
 
   home:
     home:
       welcome: Welcome to the game central store.
       text_colour: "text colour:"
+      type: "type"
+      color: "color"
+      id: "id"
+      color_button: "color_button"
       change_color: change color
       font_size: "font size:"
+      font_size_id: "font_size"
+      value: "value"
+      font_size_button: "font_size_button"
       small: small
       medium: medium
       large: large
@@ -62,6 +106,7 @@ en:
       title: Contact Us
       contact_us: Complete the following form to get in touch with us.
 
+      post: "post"
       contact_form_id: "contact_form"
       name: "Name:"
       name_field_name: "name"
@@ -82,8 +127,19 @@ en:
       no_email: You must supply an email address
       email_sent: Thank you. We will be in touch shortly.
 
+
   games:
     show:
+      src: "src"
+      alt: "alt"
+      id: "id"
+      game_image: "game_image"
+      width: "width"
+      height: "height"
+      game_info: "game_info"
+      add_to_basket_button: "add_to_basket_button"
+      post: "post"
+      add_to_basket_link: "add_to_basket_link"
       price: "Price: £"
       game_console: "Game Console: "
       description: "Description"
@@ -94,6 +150,15 @@ en:
 
   baskets:
     show:
+      id: "id"
+      line_item_id: "line_item_"
+      src: "src"
+      alt: "alt"
+      width: "width"
+      height: "height"
+      remove_from_basket_link: "remove_from_basket_link"
+      total_cost_of_basket: "total_cost_of_basket"
+      proceed_to_checkout_link: "proceed_to_checkout_link"
       shopping_basket: Shopping Basket
       total_cost: "Total Cost: £"
       remove_from_basket: "Remove From Basket"
@@ -103,6 +168,9 @@ en:
 
   line_items:
     destroy:
+      line_item_id: "#line_item_"
+      total_cost_of_basket: "#total_cost_of_basket"
+      proceed_to_checkout_link: "#proceed_to_checkout_link"
       total_cost: "Total Cost: £"
 
   orders:
@@ -116,12 +184,19 @@ en:
 
     new:
       checkout: Checkout
+      form: "form"
+      back: "Back"
 
     show:
+      src: "src"
+      alt: "alt"
+      width: "width"
+      height: "height"
+      /: "/"
+      back: "Back"
       delivered: Delivered
       delivery_date: "Delivery Date: "
       total_cost: "Total Cost: £"
-
 
   helpers:
     label:

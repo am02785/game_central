@@ -13,17 +13,13 @@ class LineItemsController < ApplicationController
     @line_item = @basket.line_items.build(game: game)
 
     respond_to do |format|
-      if @line_item.save
-        # the total cost of the basket should be increased by the price of the game
-        @basket.total_cost += game.price
-        @basket.save
-        # the user should be redirected to the basket.
-        format.html { redirect_to @line_item.basket, notice: 'Line item was successfully created.' }
-        format.json { render :show, status: :created, location: @line_item }
-      else
-        format.html { render :new }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
-      end
+      @line_item.save
+      # the total cost of the basket should be increased by the price of the game
+      @basket.total_cost += game.price
+      @basket.save
+      # the user should be redirected to the basket.
+      format.html { redirect_to @line_item.basket }
+      format.json { render :show, status: :created, location: @line_item }
     end
   end
 
@@ -32,7 +28,7 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to game_line_items_url, notice: 'Line item was successfully destroyed.' }
+      format.html { redirect_to game_line_items_url }
       # used to handle a javascript response.
       format.js
       format.json { head :no_content }

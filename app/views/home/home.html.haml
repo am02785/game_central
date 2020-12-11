@@ -1,14 +1,14 @@
 / The welcome message in the home page.
 %p= t('.welcome')
-%input{'type' => 'color', 'id' => 'color'}
-%button{'id' => 'color_button'}= t('.change_color')
+%input{t('.type') => t('.color'), t('.id') => t('.color')}
+%button{t('.id') => t('.color_button')}= t('.change_color')
 %br
 %br
 %label= t('.font_size')
-%select{'id' => "font_size"}
-  %option{'value' => t('.small')}= t('.small')
-  %option{'value' => t('.medium')}= t('.medium')
-  %option{'value' => t('.large')}= t('.large')
+%select{t('.id') => t('.font_size')}
+  %option{t('.value') => t('.small')}= t('.small')
+  %option{t('.value') => t('.medium')}= t('.medium')
+  %option{t('.value') => t('.large')}= t('.large')
 %br
 %br
-%button{'id' => 'font_size_button'}= t('.change_font_size')
+%button{t('.id') => t('.font_size_button')}= t('.change_font_size')

@@ -1,7 +1,7 @@
 %h1 Listing games
 - @games.each do |game|
-  %a{'href' => t('games_index_route') + game.id.to_s, 'class' => 'show_game'}
-    %image{'src' => game.image_url, 'alt' => game.title, 'width' => 150, 'height' => 200}
+  %a{t('href') => t('games_index_route') + game.id.to_s, t('class') => t('show_game')}
+    %image{t('src') => game.image_url, t('alt') => game.title, t('width') => 150, t('height') => 200}
     %p= game.title
 
 %br

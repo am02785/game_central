@@ -3,14 +3,14 @@
 %h1= t('.shopping_basket')
 
 - @basket.line_items.each do |item|
-  %div{'id' => 'line_item_' + item.id.to_s}
-    %image{'src' => item.game.image_url, 'alt' => item.game.title, 'width' => 150, 'height' => 200}
+  %div{t('.id') => t('.line_item_id') + item.id.to_s}
+    %image{t('.src') => item.game.image_url, t('.alt') => item.game.title, t('.width') => 150, t('.height') => 200}
     %p= item.game.title
-    = link_to t('.remove_from_basket'), game_line_item_path(item.game.id), :href => t('.game_path') + item.game.id.to_s + t('.line_item_path') + item.id.to_s, :method => :delete, :remote => true, id: "remove_from_basket_link"
+    = link_to t('.remove_from_basket'), game_line_item_path(item.game.id), :href => t('.game_path') + item.game.id.to_s + t('.line_item_path') + item.id.to_s, :method => :delete, :remote => true, id: t('.remove_from_basket_link')
     %br
     %br
 
-%h4{'id' => 'total_cost_of_basket'}= t('.total_cost') + @basket.total_cost.to_s
+%h4{t('.id') => t('.total_cost_of_basket')}= t('.total_cost') + @basket.total_cost.to_s
 
 - if @basket.line_items.length > 0
-  = link_to t('.proceed_to_checkout'), new_order_path, id: 'proceed_to_checkout_link'
+  = link_to t('.proceed_to_checkout'), new_order_path, id: t('.proceed_to_checkout_link')

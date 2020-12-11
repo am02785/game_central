@@ -2,13 +2,13 @@
 
 - @order.line_items.each do |item|
   %div
-    %image{'src' => item.game.image_url, 'alt' => item.game.title, 'width' => 150, 'height' => 200}
+    %image{t('.src') => item.game.image_url, t('.alt') => item.game.title, t('.width') => 150, t('.height') => 200}
     %p= item.game.title
     - if item.delivery_date <= Date.today
       %p= t('.delivered')
     - else
-      %p= t('.delivery_date') + item.delivery_date.wday.to_s + '/' + item.delivery_date.mon.to_s + '/' + item.delivery_date.year.to_s
+      %p= t('.delivery_date') + item.delivery_date.wday.to_s + t('./') + item.delivery_date.mon.to_s + t('./') + item.delivery_date.year.to_s
 
 %h4= t('.total_cost') + @order.total_cost.to_s
 
-= link_to 'Back', orders_path
+= link_to t('.back'), orders_path

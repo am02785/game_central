@@ -1,17 +1,17 @@
 %p#notice= notice
 
-%image{'src' => @game.image_url, 'alt' => @game.title, 'id' => 'game_image', 'width' => 300, 'height' => 400}
+%image{t('.src') => @game.image_url, t('.alt') => @game.title, t('.id') => t('.game_image'), t('.width') => 300, t('.height') => 400}
 
-%div{'id' => 'game_info'}
+%div{t('.id') => t('.game_info')}
   %h1= @game.title
   %h4= t('.price') + @game.price.to_s
   %h4= t('.game_console') + @game.game_console
   %h2= t('.description')
   %p= @game.description
   %h4= t('.release_date') + @game.release_date.wday.to_s + '/' + @game.release_date.mon.to_s + '/' + @game.release_date.year.to_s
-  %div{'id' => 'add_to_basket_button'}
+  %div{t('.id') => t('.add_to_basket_button')}
     %p
-      = link_to t('.add_to_basket'), game_line_items_path(game_id: @game.id), method: 'post', href: t('.game_path') + @game.id.to_s + t('.line_item_path') + @game.id.to_s, id: 'add_to_basket_link'
+      = link_to t('.add_to_basket'), game_line_items_path(game_id: @game.id), method: t('.post'), href: t('.game_path') + @game.id.to_s + t('.line_item_path') + @game.id.to_s, id: t('.add_to_basket_link')
 
 %br
 %br

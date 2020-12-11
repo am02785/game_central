@@ -1,17 +1,17 @@
 / Paragraphs which the email contains.
-%p= "Dear #{t('app_title')},"
-%p= "Could you get in touch with me please?"
+%p= t('dear') + " #{t('app_title')},"
+%p= t('could_you_get_in_touch_with_me_please')
 
 %dl
-  %dt Name:
+  %dt= t('name_title_in_contact_email')
   %dd= @name # The name of the user.
-  %dt Email:
+  %dt= t('email')
   %dd= @email # The email address of the user.
-  %dt Telephone:
+  %dt= t('telephone')
   %dd= @telephone # The telephone number of the user.
 
 %p= @message # The paragraph which is the message that the user sent.
 
 / The thank you message which the email contains.
-%p Thanks,
+%p= t('thanks')
 %p= @name # The name of the user.

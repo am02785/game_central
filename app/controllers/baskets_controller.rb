@@ -14,13 +14,9 @@ class BasketsController < ApplicationController
     @basket = Basket.new({total_cost: 0, customer_id: current_customer.id})
 
     respond_to do |format|
-      if @basket.save
-        format.html { redirect_to @basket, notice: 'Basket was successfully created.' }
-        format.json { render :show, status: :created, location: @basket }
-      else
-        format.html { render :new }
-        format.json { render json: @basket.errors, status: :unprocessable_entity }
-      end
+      @basket.save
+      format.html { redirect_to @basket}
+      format.json { render :show, status: :created, location: @basket }
     end
   end
 
@@ -29,7 +25,7 @@ class BasketsController < ApplicationController
   def destroy
     @basket.destroy
     respond_to do |format|
-      format.html { redirect_to baskets_url, notice: 'Basket was successfully destroyed.' }
+      format.html { redirect_to baskets_url }
       format.json { head :no_content }
     end
   end

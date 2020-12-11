@@ -1,4 +1,4 @@
 / The footer of every page.
 %footer
   / The copyright notice which contains the name of the application and the current year.
-  %p!= "&copy; #{t('app_title')} #{Time.now.year}"
+  %p!= t('copyright') + " #{t('app_title')} #{Time.now.year}"
