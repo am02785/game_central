@@ -26,7 +26,5 @@ class BasketsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Basket.count', -1) do
       delete basket_url(@basket)
     end
-
-    assert_redirected_to baskets_url
   end
 end

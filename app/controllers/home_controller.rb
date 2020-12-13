@@ -1,13 +1,17 @@
 class HomeController < ApplicationController
+  
   # The home action which gets the home page.
+  # GET /
   def home
   end
 
   # The contact action which gets the contact page.
+  # GET /contact
   def contact
   end
 
   # The request_contact action which submits the contact form.
+  # POST /request_contact
   def request_contact
     name = params[:name] # The value of the name field.
     email = params[:email] # The value of the email field.

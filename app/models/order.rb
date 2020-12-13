@@ -35,7 +35,7 @@ class Order < ApplicationRecord
   # The line items in an order should be destroyed if the order is destroyed.
   has_many :line_items, dependent: :destroy
 
-  # Scope which is used to return all orders which a specific customer owns
+  # Scope which is used to return all orders which a specific customer has made
   # Used so that each customer can only see their own orders
   scope :customer_orders, ->(customer) { where(['customer_id = ?', customer.id]) }
 
