@@ -10,7 +10,21 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     get root_url
     assert_response :success # tests whether we can perform a get on home.
 
+    assert_template layout: 'application'
+
+    assert_select 'title', 'Game Central'
     assert_select 'p', 'Welcome to the game central store.' # tests the content of the p element.
+    assert_select 'input#color'
+    assert_select 'button#color_button', 'change color'
+    assert_select 'br'
+    assert_select 'label', 'font size:'
+    assert_select 'select#font_size' do
+      assert_select 'option', 'small'
+      assert_select 'option', 'medium'
+      assert_select 'option', 'large'
+    end
+    assert_select 'br'
+    assert_select 'button#font_size_button', 'change font size'
   end
 
   # tests the contact action.
@@ -31,8 +45,8 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
   test 'should post request contact but no email' do
     post request_contact_url # performs a post request which does not have any parameters.
 
-    assert_response :redirect # tests whether the user is redirected.
-    assert_not_empty flash[:alert] # tests whether the alert flash message is not empty.
+    assert_redirected_to root_url # tests whether the user is redirected.
+    assert_equal 'You must supply an email address', flash[:alert] # tests whether the alert flash message is not empty.
     assert_nil flash[:notice] # tests whether the notice flash message is empty.
   end
 
@@ -43,9 +57,9 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
         {name: 'Matthew', email: 'matthew@me.com',
          telephone: '1234567890', message: 'Hello'} # performs a post request which has parameters including an email.
 
-    assert_response :redirect # tests whether the user is redirected.
+    assert_redirected_to root_url # tests whether the user is redirected.
     assert_nil flash[:alert] # tests whether the alert flash message is empty.
-    assert_not_empty flash[:notice] # tests whether the notice flash message is not empty.
+    assert_equal 'Thank you. We will be in touch shortly.', flash[:notice] # tests whether the notice flash message is not empty.
   end
 
 end

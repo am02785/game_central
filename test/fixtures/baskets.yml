@@ -2,8 +2,8 @@
 
 one:
   customer_id: 1
-  total_cost: 9.99
+  total_cost: 0
 
 two:
   customer_id: 2
-  total_cost: 9.99
+  total_cost: 0

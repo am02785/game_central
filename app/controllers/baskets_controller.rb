@@ -14,14 +14,16 @@ class BasketsController < ApplicationController
   # POST /baskets
   # POST /baskets.json
   def create
-    # creates a new basket which has a total_cost of 0 and is owned by the current customer who is logged in
-    @basket = Basket.new({total_cost: 0, customer_id: current_customer.id})
+    # creates a new basket which contains fields which have values equal to parameters accessed from
+    # the basket_params hash
+    @basket = Basket.new(basket_params)
 
     respond_to do |format|
       # saves the basket
       @basket.save
       # the customer is redirected to the page which shows the customers basket to the customer
-      format.html { redirect_to @basket }
+      # shows a notice to the customer that the basket has successfully been created
+      format.html { redirect_to @basket, notice: t('.notice') }
       format.json { render :show, status: :created, location: @basket }
     end
   end

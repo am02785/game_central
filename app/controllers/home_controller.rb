@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  
+
   # The home action which gets the home page.
   # GET /
   def home

@@ -22,7 +22,8 @@ class LineItemsController < ApplicationController
       # saves the basket because the total cost of the basket has been updated
       @basket.save
       # the user should be redirected to the page which shows the current customers basket
-      format.html { redirect_to @line_item.basket }
+      # shows a notice to the customer that the line_item has successfully been created
+      format.html { redirect_to @line_item.basket, notice: t('.notice') }
       format.json { render :show, status: :created, location: @line_item }
     end
   end
@@ -34,13 +35,10 @@ class LineItemsController < ApplicationController
     # destroys the line_item
     @line_item.destroy
     respond_to do |format|
-      # the user is redirected to game_line_items url
-      format.html { redirect_to game_line_items_url }
       # AJAX is used to destroy the line item and remove it from the basket view without being
       # redirected to a list of line items
       # format.js is used to handle a javascript response.
       format.js
-      format.json { head :no_content }
     end
     # the total cost of the basket is decreased by the price of the game
     @basket.total_cost -= @line_item.game.price

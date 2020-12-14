@@ -20,7 +20,7 @@
       - if current_customer.basket
         = link_to t('basket'), basket_path(current_customer.basket.id)
       - else
-        = link_to t('basket'), baskets_path, method: :post
+        = link_to t('basket'), baskets_path(params: { basket: { total_cost: 0, customer_id: current_customer.id } }), method: :post
       = t('|')
       = link_to t('customer_orders'), orders_path
     - else

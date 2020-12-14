@@ -166,7 +166,13 @@ en:
       line_item_path: "/line_items/"
       proceed_to_checkout: "Proceed To Checkout"
 
+    create:
+      notice: "Basket was successfully created."
+
   line_items:
+    create:
+      notice: "Line item was successfully created."
+
     destroy:
       line_item_id: "#line_item_"
       total_cost_of_basket: "#total_cost_of_basket"
@@ -197,6 +203,9 @@ en:
       delivered: Delivered
       delivery_date: "Delivery Date: "
       total_cost: "Total Cost: £"
+
+    create:
+      notice: "Order was successfully created."
 
   helpers:
     label:

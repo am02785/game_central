@@ -25,9 +25,6 @@ class OrdersController < ApplicationController
     @order = current_customer.orders.new
   end
 
-
-
-
   # the create action which creates the order which is made by the current customer
   # POST /orders
   # POST /orders.json
@@ -74,8 +71,9 @@ class OrdersController < ApplicationController
         # because the total_cost of the basket is updated
         current_customer.basket.save
         # if the order has successfully been saved, the current customer should be redirected to the page which
-        # shows the order that the current_customer has made
-        format.html { redirect_to @order }
+        # shows the order that the current_customer has made.
+        # shows a notice to the customer that the order has successfully been created
+        format.html { redirect_to @order, notice: t('.notice') }
         format.json { render :show, status: :created, location: @order }
       else
         # if the order has not successfully been saved, the current customer should not be redirected to another

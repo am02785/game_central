@@ -14,4 +14,12 @@ two:
   image_url: MyString
   price: 9.99
   release_date: 2020-11-28
-  game_console: Nintendo Switch
+  game_console: PS5
+
+three:
+  title: game3
+  description: MyText
+  image_url: MyString
+  price: 9.99
+  release_date: 2020-11-28
+  game_console: Xbox Series X
