@@ -13,7 +13,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require jquery.validate.min.js
-//= require jquery_functions.js
+//= require jquery_functions.js.erb
 //= require activestorage
 //= require turbolinks
 //= require_tree .

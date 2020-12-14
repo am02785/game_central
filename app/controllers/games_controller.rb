@@ -12,18 +12,6 @@ class GamesController < ApplicationController
     @games = @games.sort_by(&:title)
   end
 
-  # The search action which gets the page which shows the customer all the games which have a title like the title
-  # which the customer input in the search bar
-  # GET /search
-  # GET /search.json
-  def search
-    # uses the search_games scope to retrieve all the games which have a title like the title which the customer
-    # input in the search bar
-    @games = Game.search_games(params[:search_input])
-    # sorts the games by title in alphabetical order
-    @games = @games.sort_by(&:title)
-  end
-
   # The nintendo_switch_games action which gets the page which shows the customer all the games for the Nintendo Switch
   # GET /nintendo_switch_games
   # GET /nintendo_switch_games.json

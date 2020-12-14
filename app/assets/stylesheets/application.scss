@@ -28,6 +28,11 @@ body {
   padding: 10px; /* sets the padding to 10px */
 }
 
+a:hover {
+  background-color: transparent;
+  color: blue;
+}
+
 /* sets the style of the h1 elements */
 h1 {
   text-transform: uppercase; /* transforms the text in h1 elements to uppercase */
@@ -122,12 +127,12 @@ th {
 
 tr:nth-child(even) {
   color: white;
-  background-color: $dark_blue;
+  background-color: $light_blue;
 }
 
 tr:nth-child(odd) {
   color: white;
-  background-color: $light_blue;
+  background-color: $dark_blue;
 }
 
 th {

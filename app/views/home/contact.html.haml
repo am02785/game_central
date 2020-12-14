@@ -4,7 +4,7 @@
 %p= t('.contact_us')
 
 / The contact form which users submit.
-/ The contact form is validated in the file jquery_functions.js.
+/ The contact form is validated in the file jquery_functions.js.erb.
 = form_tag request_contact_path, method: t('.post'), id: t('.contact_form_id') do # The path is request_contact_path and the method is post.
   = label_tag :name, t('.name') # Label tag for name field.
   = text_field_tag :name, '', name: t('.name_field_name'), title: t('.enter_name'), size: 50 # The field which users input their name.

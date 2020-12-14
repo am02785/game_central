@@ -19,10 +19,6 @@ class GamesControllerTest < ActionDispatch::IntegrationTest
     assert_select 'p', 'game1'
   end
 
-  test "should get search" do
-    get search_url
-    assert_response :success
-  end
 
   test "should get nintendo_switch_games" do
     get nintendo_switch_games_url
