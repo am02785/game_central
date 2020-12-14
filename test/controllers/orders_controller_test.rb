@@ -33,6 +33,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
         end
       end
     end
+    assert_select 'h4', 'Average Cost Of Orders: £' + @order.total_cost.to_s
     assert_select 'br'
   end
 

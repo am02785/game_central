@@ -187,6 +187,7 @@ en:
       link_to_order: Link To Order
       show_order: Show Order
       £: £
+      average_cost_of_orders: "Average Cost Of Orders: £"
 
     new:
       checkout: Checkout

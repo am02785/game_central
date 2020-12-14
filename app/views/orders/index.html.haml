@@ -16,4 +16,6 @@
         %td= t('.£') + order.total_cost.to_s
         %td= link_to t('.show_order'), order
 
+%h4= t('.average_cost_of_orders') + @average_cost_of_orders.round(2).to_s
+
 %br

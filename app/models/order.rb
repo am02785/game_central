@@ -38,5 +38,23 @@ class Order < ApplicationRecord
   # Scope which is used to return all orders which a specific customer has made
   # Used so that each customer can only see their own orders
   scope :customer_orders, ->(customer) { where(['customer_id = ?', customer.id]) }
+  # calculates the average cost of all orders which a specific customer has made
+  scope :customer_average_order_cost, ->(customer) { where(['customer_id = ?', customer.id]).average(:total_cost) }
+
+  # calculates the average cost of all orders in a list of orders
+  def calculate_average_order_cost(orders)
+    # sets the total cost of all orders to 0
+    total_order_cost = 0
+    # calculates the total cost of all orders in the list of orders
+    orders.all.each do |order|
+      # increases the total cost of all orders by the total_cost of the order
+      total_order_cost += order.total_cost
+    end
+    # determines the average cost of all orders in the list of orders by dividing the
+    # total cost of all orders in the list by the length of the list
+    average_order_cost = total_order_cost / Order.all.length
+    # returns the average cost of all orders in the list of orders
+    average_order_cost
+  end
 
 end

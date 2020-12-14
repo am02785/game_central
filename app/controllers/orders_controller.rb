@@ -10,6 +10,9 @@ class OrdersController < ApplicationController
   def index
     # uses the customer_orders scope to retrieve all the orders that the current customer has made
     @orders = Order.customer_orders(current_customer)
+    # uses the customer_average_order_cost scope to calculate the average cost of all the orders that the
+    # current customer has made
+    @average_cost_of_orders = Order.customer_average_order_cost(current_customer)
   end
 
   # the show action which gets the page which shows the current order to the customer
